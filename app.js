@@ -12,7 +12,7 @@ const PRESETS = [
     bg2: '#f9fcff',
     pattern: 'pitch',
     dark: false,
-    radius: 18,
+    radius: 10,
     team: true
   },
   {
@@ -26,7 +26,7 @@ const PRESETS = [
     bg2: '#f9fbf8',
     pattern: 'aurora',
     dark: false,
-    radius: 20
+    radius: 11
   },
   {
     id: 'sakura',
@@ -39,7 +39,7 @@ const PRESETS = [
     bg2: '#fff9fb',
     pattern: 'dots',
     dark: false,
-    radius: 22
+    radius: 12
   },
   {
     id: 'ocean',
@@ -52,7 +52,7 @@ const PRESETS = [
     bg2: '#fafdff',
     pattern: 'grid',
     dark: false,
-    radius: 18
+    radius: 10
   },
   {
     id: 'sunset',
@@ -65,7 +65,7 @@ const PRESETS = [
     bg2: '#fff9f3',
     pattern: 'aurora',
     dark: false,
-    radius: 22
+    radius: 12
   },
   {
     id: 'lavender',
@@ -78,7 +78,7 @@ const PRESETS = [
     bg2: '#fbfaff',
     pattern: 'dots',
     dark: false,
-    radius: 20
+    radius: 11
   },
   {
     id: 'midnight',
@@ -91,7 +91,7 @@ const PRESETS = [
     bg2: '#18233a',
     pattern: 'aurora',
     dark: true,
-    radius: 20
+    radius: 11
   },
   {
     id: 'citrus',
@@ -104,7 +104,7 @@ const PRESETS = [
     bg2: '#fffdf6',
     pattern: 'grid',
     dark: false,
-    radius: 18
+    radius: 10
   },
   {
     id: 'film',
@@ -117,7 +117,7 @@ const PRESETS = [
     bg2: '#fcf7f0',
     pattern: 'paper',
     dark: false,
-    radius: 24
+    radius: 12
   }
 ];
 
@@ -1041,28 +1041,28 @@ function generateTheme(prompt) {
     bg2,
     pattern: profile.pattern,
     dark: profile.dark,
-    radius: 16 + (seed % 11),
+    radius: 8 + (seed % 5),
     generated: true
   };
 }
 
 function normalizeTheme(theme) {
   const fallback = PRESETS[0];
-  if (theme === null || typeof theme !== 'object') return fallback;
+  const source = (theme === null || typeof theme !== 'object') ? fallback : theme;
   return {
-    id: typeof theme.id === 'string' ? theme.id : 'custom',
-    name: typeof theme.name === 'string' ? theme.name : fallback.name,
-    tag: typeof theme.tag === 'string' ? theme.tag : '自定',
-    desc: typeof theme.desc === 'string' ? theme.desc : fallback.desc,
-    accent: isHexColor(theme.accent) ? theme.accent : fallback.accent,
-    secondary: isHexColor(theme.secondary) ? theme.secondary : fallback.secondary,
-    bg: isHexColor(theme.bg) ? theme.bg : fallback.bg,
-    bg2: isHexColor(theme.bg2) ? theme.bg2 : fallback.bg2,
-    pattern: ['aurora', 'dots', 'grid', 'paper'].includes(theme.pattern) ? theme.pattern : fallback.pattern,
-    dark: Boolean(theme.dark),
-    radius: Number.isFinite(Number(theme.radius)) ? clamp(Number(theme.radius), 8, 28) : fallback.radius,
-    generated: Boolean(theme.generated),
-    team: Boolean(theme.team) || theme.id === 'yingbo'
+    id: typeof source.id === 'string' ? source.id : 'custom',
+    name: typeof source.name === 'string' ? source.name : fallback.name,
+    tag: typeof source.tag === 'string' ? source.tag : '自定',
+    desc: typeof source.desc === 'string' ? source.desc : fallback.desc,
+    accent: isHexColor(source.accent) ? source.accent : fallback.accent,
+    secondary: isHexColor(source.secondary) ? source.secondary : fallback.secondary,
+    bg: isHexColor(source.bg) ? source.bg : fallback.bg,
+    bg2: isHexColor(source.bg2) ? source.bg2 : fallback.bg2,
+    pattern: ['aurora', 'dots', 'grid', 'paper'].includes(source.pattern) ? source.pattern : fallback.pattern,
+    dark: Boolean(source.dark),
+    radius: Number.isFinite(Number(source.radius)) ? clamp(Number(source.radius), 6, 12) : fallback.radius,
+    generated: Boolean(source.generated),
+    team: Boolean(source.team) || source.id === 'yingbo'
   };
 }
 

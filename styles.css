@@ -14,7 +14,7 @@
   --glow-a: rgba(79, 124, 104, 0.24);
   --glow-b: rgba(196, 154, 95, 0.18);
   --shadow: 0 24px 72px rgba(45, 66, 56, 0.13);
-  --radius: 20px;
+  --radius: 10px;
   --font-ui: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
   --font-display: "Iowan Old Style", "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
 }
@@ -4753,5 +4753,68 @@ body.is-yingbo .day-cell.is-today.has-match:hover .day-match-venue {
 
   .countdown-unit b {
     font-size: 17px;
+  }
+}
+
+/* Final sharper radius scale */
+.theme-panel,
+.team-panel {
+  border-radius: 12px;
+}
+
+.calendar-card {
+  border-radius: 14px;
+}
+
+.current-theme {
+  border-radius: 10px;
+}
+
+.theme-preview,
+.preview-window {
+  border-radius: 8px;
+}
+
+.day-cell {
+  border-radius: 7px;
+}
+
+.selected-day-badge {
+  border-radius: 8px;
+}
+
+.date-picker-popover {
+  border-radius: 12px;
+}
+
+.player-modal-card {
+  border-radius: 16px;
+}
+
+.month-matches,
+.selected-match {
+  border-radius: 8px;
+}
+
+.next-match-card,
+.team-identity {
+  border-radius: 10px;
+}
+
+.player-card {
+  border-radius: 8px;
+}
+
+.player-photo {
+  border-radius: 6px;
+}
+
+@media (max-width: 780px) {
+  .calendar-card {
+    border-radius: 10px;
+  }
+
+  .player-modal-card {
+    border-radius: 12px;
   }
 }
