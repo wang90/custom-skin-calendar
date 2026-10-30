@@ -4926,3 +4926,133 @@ body.is-yingbo .day-cell.is-today.has-match:hover .day-match-venue {
     border-radius: 10px;
   }
 }
+
+/* North Stand cheer button */
+.north-stand-button {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 9px 10px;
+  border: 1px solid rgba(18, 79, 145, 0.17);
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(250, 253, 255, 0.92), rgba(219, 238, 255, 0.78));
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.north-stand-button:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(18, 79, 145, 0.10);
+}
+
+.north-stand-button.is-playing {
+  border-color: rgba(232, 182, 76, 0.62);
+  background: linear-gradient(135deg, #0a3768, #125a9d);
+  box-shadow: 0 10px 22px rgba(7, 39, 77, 0.24);
+  color: #ffffff;
+}
+
+.north-stand-icon {
+  display: grid;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.north-stand-button.is-playing .north-stand-icon {
+  background: var(--secondary);
+  color: #17304f;
+}
+
+.north-stand-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.north-stand-copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.north-stand-copy strong {
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.north-stand-copy small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.north-stand-button.is-playing .north-stand-copy small {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.cheer-bars {
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  width: 20px;
+  height: 17px;
+}
+
+.cheer-bars i {
+  width: 2px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.42;
+  transform-origin: bottom;
+}
+
+.north-stand-button.is-playing .cheer-bars i {
+  background: var(--secondary);
+  opacity: 1;
+  animation: cheer-bar 0.62s ease-in-out infinite alternate;
+}
+
+.north-stand-button.is-playing .cheer-bars i:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.north-stand-button.is-playing .cheer-bars i:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.north-stand-button.is-playing .cheer-bars i:nth-child(4) {
+  animation-delay: 0.05s;
+}
+
+@keyframes cheer-bar {
+  from { height: 4px; }
+  to { height: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .north-stand-button.is-playing .cheer-bars i {
+    animation: none;
+    height: 10px;
+  }
+}
