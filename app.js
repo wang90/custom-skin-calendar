@@ -12,7 +12,7 @@ const PRESETS = [
     bg2: '#f9fcff',
     pattern: 'pitch',
     dark: false,
-    radius: 10,
+    radius: 6,
     team: true
   },
   {
@@ -26,7 +26,7 @@ const PRESETS = [
     bg2: '#f9fbf8',
     pattern: 'aurora',
     dark: false,
-    radius: 11
+    radius: 6
   },
   {
     id: 'sakura',
@@ -39,7 +39,7 @@ const PRESETS = [
     bg2: '#fff9fb',
     pattern: 'dots',
     dark: false,
-    radius: 12
+    radius: 6
   },
   {
     id: 'ocean',
@@ -52,7 +52,7 @@ const PRESETS = [
     bg2: '#fafdff',
     pattern: 'grid',
     dark: false,
-    radius: 10
+    radius: 6
   },
   {
     id: 'sunset',
@@ -65,7 +65,7 @@ const PRESETS = [
     bg2: '#fff9f3',
     pattern: 'aurora',
     dark: false,
-    radius: 12
+    radius: 6
   },
   {
     id: 'lavender',
@@ -78,7 +78,7 @@ const PRESETS = [
     bg2: '#fbfaff',
     pattern: 'dots',
     dark: false,
-    radius: 11
+    radius: 6
   },
   {
     id: 'midnight',
@@ -91,7 +91,7 @@ const PRESETS = [
     bg2: '#18233a',
     pattern: 'aurora',
     dark: true,
-    radius: 11
+    radius: 6
   },
   {
     id: 'citrus',
@@ -104,7 +104,7 @@ const PRESETS = [
     bg2: '#fffdf6',
     pattern: 'grid',
     dark: false,
-    radius: 10
+    radius: 6
   },
   {
     id: 'film',
@@ -117,7 +117,7 @@ const PRESETS = [
     bg2: '#fcf7f0',
     pattern: 'paper',
     dark: false,
-    radius: 12
+    radius: 6
   }
 ];
 
@@ -1041,7 +1041,7 @@ function generateTheme(prompt) {
     bg2,
     pattern: profile.pattern,
     dark: profile.dark,
-    radius: 8 + (seed % 5),
+    radius: 4 + (seed % 5),
     generated: true
   };
 }
@@ -1060,7 +1060,7 @@ function normalizeTheme(theme) {
     bg2: isHexColor(source.bg2) ? source.bg2 : fallback.bg2,
     pattern: ['aurora', 'dots', 'grid', 'paper'].includes(source.pattern) ? source.pattern : fallback.pattern,
     dark: Boolean(source.dark),
-    radius: Number.isFinite(Number(source.radius)) ? clamp(Number(source.radius), 6, 12) : fallback.radius,
+    radius: Number.isFinite(Number(source.radius)) ? clamp(Number(source.radius), 4, 8) : fallback.radius,
     generated: Boolean(source.generated),
     team: Boolean(source.team) || source.id === 'yingbo'
   };

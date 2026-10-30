@@ -14,7 +14,7 @@
   --glow-a: rgba(79, 124, 104, 0.24);
   --glow-b: rgba(196, 154, 95, 0.18);
   --shadow: 0 24px 72px rgba(45, 66, 56, 0.13);
-  --radius: 10px;
+  --radius: 6px;
   --font-ui: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
   --font-display: "Iowan Old Style", "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
 }
@@ -4816,5 +4816,113 @@ body.is-yingbo .day-cell.is-today.has-match:hover .day-match-venue {
 
   .player-modal-card {
     border-radius: 12px;
+  }
+}
+
+/* Compact corner scale */
+.theme-panel,
+.team-panel {
+  border-radius: 7px;
+}
+
+.calendar-card {
+  border-radius: 9px;
+}
+
+.current-theme {
+  border-radius: 6px;
+}
+
+.theme-preview,
+.preview-window {
+  border-radius: 5px;
+}
+
+.day-cell {
+  border-radius: 5px;
+}
+
+.selected-day-badge {
+  border-radius: 6px;
+}
+
+.date-picker-popover {
+  border-radius: 9px;
+}
+
+.player-modal-card {
+  border-radius: 12px;
+}
+
+.month-matches,
+.selected-match {
+  border-radius: 6px;
+}
+
+.next-match-card,
+.team-identity {
+  border-radius: 7px;
+}
+
+.player-card {
+  border-radius: 5px;
+}
+
+.player-photo {
+  border-radius: 4px;
+}
+
+.icon-button,
+.today-button,
+.date-picker-button {
+  border-radius: 6px;
+}
+
+.view-switch,
+.nav-group {
+  border-radius: 7px;
+}
+
+.view-switch button,
+.nav-button {
+  border-radius: 4px;
+}
+
+.prompt-form {
+  border-radius: 7px;
+}
+
+.prompt-form button {
+  border-radius: 5px;
+}
+
+.preset-card {
+  border-radius: 5px;
+}
+
+.color-field {
+  border-radius: 6px;
+}
+
+.month-match-pill,
+.date-picker-month,
+.date-picker-exact,
+.date-picker-actions button,
+.picker-year-arrow,
+.date-picker-year-row select {
+  border-radius: 4px;
+}
+
+.player-modal-close {
+  border-radius: 7px;
+}
+
+@media (max-width: 780px) {
+  .calendar-card {
+    border-radius: 7px;
+  }
+
+  .player-modal-card {
+    border-radius: 10px;
   }
 }
