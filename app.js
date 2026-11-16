@@ -1187,14 +1187,33 @@ function updateThemeUI() {
   updateTeamPreview();
 }
 
+const PRESET_ICONS = {
+  yingbo: '<svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8v4.4a4 4 0 0 1-8 0V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 6H5.3v1.4a3 3 0 0 0 3 3M16 6h2.7v1.4a3 3 0 0 1-3 3M12 12.5v4M8.7 20h6.6M9.8 17h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+  'demon-slayer': '<svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="4" fill="currentColor" fill-opacity=".32"/><path d="M4 20 20 4M6 18l-2 2M15 5l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  forest: '<svg viewBox="0 0 24 24" fill="none"><path d="M20 4C12 4 5 8 5 15c0 3 2 5 5 5 7 0 10-8 10-16Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 20c3-6 7-9 12-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+  sakura: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 9c-3.8-3.8-4.8-6.2-2.2-7 2.2-.7 3.2 2.4 2.2 7ZM12 15c3.8 3.8 4.8 6.2 2.2 7-2.2.7-3.2-2.4-2.2-7ZM9 12c-3.8 3.8-6.2 4.8-7 2.2-.7-2.2 2.4-3.2 7-2.2ZM15 12c3.8-3.8 6.2-4.8 7-2.2.7 2.2-2.4 3.2-7 2.2Z" stroke="currentColor" stroke-width="1.4"/></svg>',
+  ocean: '<svg viewBox="0 0 24 24" fill="none"><path d="M3 9c3-4 5-4 8 0s5 4 8 0M3 15c3-4 5-4 8 0s5 4 8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+  sunset: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2M5.6 5.6l1.4 1.4M18.4 5.6 17 7M3 16h18M5 20h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  lavender: '<svg viewBox="0 0 24 24" fill="none"><path d="M16.5 4.5A8 8 0 1 0 19 18a6.4 6.4 0 0 1-2.5-13.5Z" stroke="currentColor" stroke-width="1.7"/><path d="m18.5 4 .7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z" fill="currentColor"/></svg>',
+  midnight: '<svg viewBox="0 0 24 24" fill="none"><path d="M15.8 4.2A7.6 7.6 0 1 0 20 16.8 6.2 6.2 0 0 1 15.8 4.2Z" stroke="currentColor" stroke-width="1.7"/><path d="m18 3 .6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6L18 3ZM6 15l.5 1.2 1.2.5-1.2.5L6 18.4l-.5-1.2-1.2-.5 1.2-.5L6 15Z" fill="currentColor"/></svg>',
+  citrus: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4M6 6l2.8 2.8M15.2 15.2 18 18M18 6l-2.8 2.8M8.8 15.2 6 18" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  film: '<svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M7 5v14M17 5v14M3.5 9h3.5M3.5 15h3.5M17 9h3.5M17 15h3.5" stroke="currentColor" stroke-width="1.4"/><path d="m10 9 4.5 3-4.5 3V9Z" fill="currentColor"/></svg>'
+};
+
 function renderPresetGrid() {
   const grid = $('#presetGrid');
-  grid.innerHTML = PRESETS.map((theme) => `
+  grid.innerHTML = PRESETS.map((theme) => {
+    const icon = PRESET_ICONS[theme.id] || PRESET_ICONS.forest;
+    return `
     <button class="preset-card" type="button" data-theme-id="${theme.id}" aria-pressed="false" title="应用${theme.name}主题">
-      <span class="preset-swatch" style="--swatch-bg:${theme.bg};--swatch-accent:${theme.accent};--swatch-secondary:${theme.secondary}"></span>
+      <span class="preset-art" data-art-pattern="${theme.pattern}" style="--art-accent:${theme.accent};--art-secondary:${theme.secondary};--art-bg:${theme.bg};--art-bg2:${theme.bg2}">
+        <span class="preset-art-glow"></span>
+        <span class="preset-art-mark" aria-hidden="true">${icon}</span>
+      </span>
       <span class="preset-name">${theme.name}</span>
     </button>
-  `).join('');
+  `;
+  }).join('');
   updateThemeUI();
 }
 

@@ -5625,3 +5625,149 @@ body.is-demon .day-cell:hover {
 body.is-demon .calendar-card::after {
   opacity: 0.72;
 }
+
+/* Rich preset thumbnails */
+.preset-card {
+  gap: 4px;
+  padding: 4px 4px 5px;
+  border-radius: 6px;
+}
+
+.preset-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 38px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.38), transparent 36%),
+    linear-gradient(138deg, var(--art-accent) 0%, var(--art-secondary) 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05), 0 3px 8px rgba(12, 31, 28, 0.10);
+  isolation: isolate;
+}
+
+.preset-art::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0.30;
+  content: "";
+}
+
+.preset-art::after {
+  position: absolute;
+  z-index: 1;
+  top: -26px;
+  left: -10px;
+  width: 54px;
+  height: 84px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+  content: "";
+  transform: rotate(28deg);
+}
+
+.preset-art-glow {
+  position: absolute;
+  right: 4px;
+  bottom: -17px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--art-bg2);
+  filter: blur(4px);
+  opacity: 0.42;
+}
+
+.preset-art[data-art-pattern="checks"]::before {
+  background-image: conic-gradient(from 90deg at 50% 50%, rgba(255, 255, 255, 0.28) 25%, transparent 0 50%, rgba(255, 255, 255, 0.28) 0 75%, transparent 0);
+  background-size: 12px 12px;
+}
+
+.preset-art[data-art-pattern="dots"]::before {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.36) 1px, transparent 1.2px);
+  background-size: 9px 9px;
+}
+
+.preset-art[data-art-pattern="grid"]::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+  background-size: 11px 11px;
+}
+
+.preset-art[data-art-pattern="paper"]::before {
+  background-image: repeating-linear-gradient(0deg, transparent 0 5px, rgba(255, 255, 255, 0.18) 5px 6px);
+}
+
+.preset-art[data-art-pattern="aurora"]::before {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.28), transparent 26%),
+    radial-gradient(circle at 30% 90%, rgba(255, 255, 255, 0.16), transparent 30%);
+}
+
+.preset-art-mark {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 50%;
+  background: rgba(5, 19, 17, 0.48);
+  box-shadow: 0 3px 10px rgba(4, 18, 15, 0.24);
+  color: #ffffff;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.preset-art-mark svg {
+  width: 15px;
+  height: 15px;
+}
+
+.preset-card:hover .preset-art-mark {
+  background: rgba(5, 19, 17, 0.70);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.preset-card.is-active .preset-art {
+  border-color: rgba(255, 255, 255, 0.76);
+  box-shadow:
+    0 0 0 1.5px var(--accent),
+    0 0 0 3px var(--accent-soft),
+    0 5px 12px rgba(10, 40, 32, 0.18);
+}
+
+.preset-name {
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+@media (max-width: 560px) {
+  .preset-art {
+    height: 34px;
+  }
+
+  .preset-art-mark {
+    width: 22px;
+    height: 22px;
+  }
+
+  .preset-art-mark svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.preset-art[data-art-pattern="pitch"]::before {
+  background-image:
+    linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(255, 255, 255, 0.28) 50%, transparent calc(50% + 0.5px)),
+    radial-gradient(circle at 50% 50%, transparent 0 10px, rgba(255, 255, 255, 0.24) 10.5px 11px, transparent 11.5px),
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(255, 255, 255, 0.13) 14px 15px);
+}
