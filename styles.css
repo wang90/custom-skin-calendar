@@ -5056,3 +5056,146 @@ body.is-yingbo .day-cell.is-today.has-match:hover .day-match-venue {
     height: 10px;
   }
 }
+
+/* 2026 championship celebration */
+body.is-yingbo {
+  --secondary: #f2c75c;
+}
+
+.champion-chip {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(242, 199, 92, 0.68);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7dc93 0%, #e6b94b 55%, #d7a432 100%);
+  box-shadow: 0 7px 20px rgba(155, 108, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  color: #143559;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+body.is-yingbo .champion-chip {
+  display: inline-flex;
+}
+
+.champion-chip svg {
+  width: 15px;
+  height: 15px;
+}
+
+body.is-yingbo .brand-copy strong {
+  color: #0a3768;
+}
+
+body.is-yingbo .brand-copy small {
+  color: #b17f1d;
+  font-weight: 750;
+}
+
+body.is-yingbo .calendar-card {
+  border-color: rgba(242, 199, 92, 0.34);
+  box-shadow:
+    var(--shadow),
+    inset 0 3px 0 var(--accent),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.52),
+    0 0 0 1px rgba(242, 199, 92, 0.17);
+}
+
+body.is-yingbo .calendar-card::after {
+  width: 300px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary) 0%, #fff1b5 48%, transparent 100%);
+  box-shadow: 0 0 16px rgba(242, 199, 92, 0.44);
+}
+
+body.is-yingbo .team-identity {
+  border-color: rgba(242, 199, 92, 0.48);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 236, 164, 0.22), transparent 30%),
+    repeating-linear-gradient(115deg, transparent 0 26px, rgba(255, 255, 255, 0.035) 26px 27px),
+    linear-gradient(135deg, #072b53 0%, #11508e 58%, #8f6a20 145%);
+  box-shadow: 0 12px 26px rgba(10, 47, 87, 0.22), inset 0 0 0 1px rgba(242, 199, 92, 0.12);
+}
+
+.champion-stars {
+  color: var(--secondary) !important;
+  font-size: 6px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em;
+}
+
+.champion-trophy {
+  display: grid;
+  flex: none;
+  width: 29px;
+  height: 29px;
+  margin-left: auto;
+  place-items: center;
+  border: 1px solid rgba(242, 199, 92, 0.52);
+  border-radius: 50%;
+  background: rgba(242, 199, 92, 0.13);
+  color: var(--secondary);
+}
+
+.champion-trophy svg {
+  width: 19px;
+  height: 19px;
+}
+
+.champion-confetti {
+  position: fixed;
+  z-index: 4;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.is-yingbo .champion-confetti {
+  display: block;
+}
+
+.champion-confetti i {
+  position: absolute;
+  top: -28px;
+  width: var(--size, 6px);
+  height: calc(var(--size, 6px) * 1.7);
+  border-radius: 1px;
+  opacity: 0.64;
+  animation: champion-confetti-fall var(--duration, 8s) linear var(--delay, 0s) infinite;
+}
+
+@keyframes champion-confetti-fall {
+  0% {
+    transform: translate3d(0, -28px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(var(--drift, 24px), 105vh, 0) rotate(720deg);
+  }
+}
+
+body.is-yingbo .selected-relative {
+  background: linear-gradient(135deg, rgba(242, 199, 92, 0.28), rgba(242, 199, 92, 0.12));
+  color: #8d641a;
+}
+
+body.is-yingbo .today-chip .live-dot {
+  background: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(242, 199, 92, 0.20);
+}
+
+@media (max-width: 1180px) {
+  body.is-yingbo .champion-chip {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .champion-confetti {
+    display: none;
+  }
+}

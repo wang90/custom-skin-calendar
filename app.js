@@ -3,11 +3,11 @@
 const PRESETS = [
   {
     id: 'yingbo',
-    name: '大连英博',
-    tag: '足球',
-    desc: '蓝色信仰，为大连而战。',
+    name: '英博冠军',
+    tag: '冠军',
+    desc: '2026 中超冠军，蓝色信仰金色加冕。',
     accent: '#124f91',
-    secondary: '#e8b64c',
+    secondary: '#f2c75c',
     bg: '#eef4fb',
     bg2: '#f9fcff',
     pattern: 'pitch',
@@ -532,9 +532,9 @@ const MATCHES = [
     "competition": "足协杯",
     "home": "云南玉昆",
     "away": "大连英博",
-    "homeScore": "",
-    "awayScore": "",
-    "status": "Fixture"
+    "homeScore": "4",
+    "awayScore": "3",
+    "status": "Played"
   },
   {
     "id": "54389817",
@@ -543,9 +543,9 @@ const MATCHES = [
     "competition": "中超",
     "home": "大连英博",
     "away": "天津津门虎",
-    "homeScore": "",
-    "awayScore": "",
-    "status": "Fixture"
+    "homeScore": "3",
+    "awayScore": "1",
+    "status": "Played"
   }
 ];
 
@@ -1108,11 +1108,11 @@ function applyTheme(theme, persist = true) {
   document.body.dataset.mode = dark ? 'dark' : 'light';
   document.body.classList.toggle('is-yingbo', normalized.team);
   root.style.colorScheme = dark ? 'dark' : 'light';
-  document.title = normalized.team ? '大连英博主题 · 日历工坊' : '日历工坊 · Calendar Studio';
+  document.title = normalized.team ? '大连英博 · 2026 中超冠军 · 日历工坊' : '日历工坊 · Calendar Studio';
   const brandName = $('#brandName');
   const brandSub = $('#brandSub');
-  if (brandName) brandName.textContent = normalized.team ? '英博日历' : '日历工坊';
-  if (brandSub) brandSub.textContent = normalized.team ? 'DALIAN YINGBO · 2026' : 'CALENDAR STUDIO';
+  if (brandName) brandName.textContent = normalized.team ? '英博冠军日历' : '日历工坊';
+  if (brandSub) brandSub.textContent = normalized.team ? 'DALIAN YINGBO · CHAMPIONS' : 'CALENDAR STUDIO';
 
   if (normalized.team === false) {
     closeTeamPanel();
@@ -1420,6 +1420,23 @@ function stopNorthStandCheer(silent = false) {
     }, 420);
   }
   if (silent === false) showToast('北看台助威已停止');
+}
+
+function renderChampionConfetti() {
+  const container = $('#championConfetti');
+  if (container === null) return;
+  const colors = ['#f2c75c', '#ffe49a', '#ffffff', '#2b7cc7', '#0e4f8f'];
+  const pieces = [];
+  for (let index = 0; index < 28; index += 1) {
+    const left = (index * 37 + 11) % 100;
+    const delay = -((index * 13) % 80) / 10;
+    const duration = 7 + (index % 6);
+    const size = 4 + ((index * 3) % 5);
+    const drift = ((index % 2 === 0) ? 1 : -1) * (18 + ((index * 7) % 34));
+    const color = colors[index % colors.length];
+    pieces.push(`<i style="left:${left}%;--delay:${delay}s;--duration:${duration}s;--drift:${drift}px;--size:${size}px;background:${color}"></i>`);
+  }
+  container.innerHTML = pieces.join('');
 }
 
 function updateTodayLabels() {
@@ -2095,6 +2112,7 @@ function restoreView() {
 
 function init() {
   updateTodayLabels();
+  renderChampionConfetti();
   populateDatePickerYears();
   renderPresetGrid();
   renderPlayerGrid();
