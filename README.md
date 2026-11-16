@@ -1,6 +1,6 @@
 # 日历工坊 · Calendar Studio
 
-> 在线预览：<https://wang90.github.io/dalian-yingbo-calendar/>
+> 在线预览：<https://wang90.github.io/custom-skin-calendar/>
 
 一个可切换主题的轻量日历网页。它提供月视图、年视图、农历与节假日信息，并可以根据文字灵感生成专属配色主题。默认内置「英博冠军」球迷主题与 30 名一线队球员资料，庆祝大连英博夺得 2026 中超冠军。
 
@@ -30,8 +30,8 @@
 
 ## 主题直达链接
 
-- 英博冠军主题：<https://wang90.github.io/dalian-yingbo-calendar/?theme=yingbo>
-- 鬼灭之刃主题：<https://wang90.github.io/dalian-yingbo-calendar/?theme=demon-slayer>
+- 英博冠军主题：<https://wang90.github.io/custom-skin-calendar/?theme=yingbo>
+- 鬼灭之刃主题：<https://wang90.github.io/custom-skin-calendar/?theme=demon-slayer>
 
 ## 运行
 
