@@ -16,6 +16,20 @@ const PRESETS = [
     team: true
   },
   {
+    id: 'demon-slayer',
+    name: '鬼灭之刃',
+    tag: '动漫',
+    desc: '水与火的呼吸，斩开崭新的一天。',
+    accent: '#1f6f5c',
+    secondary: '#c65050',
+    bg: '#0b1412',
+    bg2: '#13231e',
+    pattern: 'checks',
+    dark: true,
+    radius: 6,
+    demon: true
+  },
+  {
     id: 'forest',
     name: '晨雾松林',
     tag: '自然',
@@ -1067,11 +1081,12 @@ function normalizeTheme(theme) {
     secondary: isHexColor(source.secondary) ? source.secondary : fallback.secondary,
     bg: isHexColor(source.bg) ? source.bg : fallback.bg,
     bg2: isHexColor(source.bg2) ? source.bg2 : fallback.bg2,
-    pattern: ['aurora', 'dots', 'grid', 'paper'].includes(source.pattern) ? source.pattern : fallback.pattern,
+    pattern: ['aurora', 'dots', 'grid', 'paper', 'checks'].includes(source.pattern) ? source.pattern : fallback.pattern,
     dark: Boolean(source.dark),
     radius: Number.isFinite(Number(source.radius)) ? clamp(Number(source.radius), 4, 8) : fallback.radius,
     generated: Boolean(source.generated),
-    team: Boolean(source.team) || source.id === 'yingbo'
+    team: Boolean(source.team) || source.id === 'yingbo',
+    demon: Boolean(source.demon) || source.id === 'demon-slayer'
   };
 }
 
@@ -1109,12 +1124,27 @@ function applyTheme(theme, persist = true) {
   document.body.dataset.pattern = normalized.pattern;
   document.body.dataset.mode = dark ? 'dark' : 'light';
   document.body.classList.toggle('is-yingbo', normalized.team);
+  document.body.classList.toggle('is-demon', normalized.demon);
   root.style.colorScheme = dark ? 'dark' : 'light';
-  document.title = normalized.team ? '大连英博 · 2026 中超冠军 · 日历工坊' : '日历工坊 · Calendar Studio';
+  if (normalized.team) {
+    document.title = '大连英博 · 2026 中超冠军 · 日历工坊';
+  } else if (normalized.demon) {
+    document.title = '鬼灭之刃主题 · 日历工坊';
+  } else {
+    document.title = '日历工坊 · Calendar Studio';
+  }
   const brandName = $('#brandName');
   const brandSub = $('#brandSub');
-  if (brandName) brandName.textContent = normalized.team ? '英博冠军日历' : '日历工坊';
-  if (brandSub) brandSub.textContent = normalized.team ? 'DALIAN YINGBO · CHAMPIONS' : 'CALENDAR STUDIO';
+  if (brandName) {
+    if (normalized.team) brandName.textContent = '英博冠军日历';
+    else if (normalized.demon) brandName.textContent = '鬼灭日历';
+    else brandName.textContent = '日历工坊';
+  }
+  if (brandSub) {
+    if (normalized.team) brandSub.textContent = 'DALIAN YINGBO · CHAMPIONS';
+    else if (normalized.demon) brandSub.textContent = 'KIMETSU CALENDAR';
+    else brandSub.textContent = 'CALENDAR STUDIO';
+  }
 
   if (normalized.team === false) {
     closeTeamPanel();
@@ -2116,6 +2146,16 @@ function bindEvents() {
 }
 
 function restoreTheme() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedTheme = params.get('theme');
+  if (requestedTheme !== null) {
+    const requested = PRESETS.find((theme) => theme.id === requestedTheme || (requestedTheme === 'demon' && theme.id === 'demon-slayer'));
+    if (requested !== undefined) {
+      applyTheme(requested);
+      return;
+    }
+  }
+
   let saved = null;
   try {
     saved = JSON.parse(localStorage.getItem(STORAGE_THEME_KEY));

@@ -5210,3 +5210,257 @@ body.is-yingbo .today-chip .live-dot {
   color: var(--secondary);
   font-weight: 750;
 }
+
+/* Demon Slayer inspired theme */
+.demon-mark,
+.demon-eyebrow {
+  display: none;
+}
+
+body.is-demon .brand-mark .calendar-mark,
+body.is-demon .brand-mark .team-mark {
+  display: none;
+}
+
+body.is-demon .brand-mark .demon-mark {
+  display: block;
+  width: 31px;
+  height: 31px;
+}
+
+body.is-demon .brand-mark {
+  border-color: rgba(198, 80, 80, 0.48);
+  background:
+    radial-gradient(circle at 28% 20%, rgba(111, 176, 151, 0.20), transparent 38%),
+    linear-gradient(145deg, #18332b, #0a1512);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.34);
+  color: #f0eee5;
+}
+
+body.is-demon .brand-copy strong {
+  color: #e9f1ec;
+}
+
+body.is-demon .brand-copy small {
+  color: #c65050;
+  font-weight: 750;
+}
+
+body.is-demon {
+  background:
+    radial-gradient(circle at 88% 9%, rgba(198, 80, 80, 0.20), transparent 29%),
+    radial-gradient(circle at 7% 43%, rgba(31, 111, 92, 0.29), transparent 37%),
+    radial-gradient(circle at 66% 91%, rgba(17, 55, 46, 0.34), transparent 35%),
+    linear-gradient(140deg, #07100d 0%, #12231d 48%, #09130f 100%);
+}
+
+body[data-pattern="checks"] .ambient-pattern {
+  background-image:
+    conic-gradient(from 90deg at 50% 50%, rgba(74, 139, 116, 0.24) 25%, transparent 0 50%, rgba(74, 139, 116, 0.24) 0 75%, transparent 0),
+    linear-gradient(135deg, transparent 48%, rgba(198, 80, 80, 0.10) 49%, rgba(198, 80, 80, 0.10) 51%, transparent 52%);
+  background-size: 52px 52px, 100% 100%;
+  mask-image: linear-gradient(125deg, transparent 7%, #000 46%, transparent 93%);
+  opacity: 0.34;
+}
+
+body.is-demon .ambient-orb--one {
+  background: radial-gradient(circle at 45% 45%, rgba(37, 120, 97, 0.40), transparent 68%);
+  opacity: 0.90;
+}
+
+body.is-demon .ambient-orb--two {
+  background: radial-gradient(circle at 50% 50%, rgba(184, 61, 61, 0.30), transparent 67%);
+  opacity: 0.88;
+}
+
+body.is-demon .ambient-orb--three {
+  background: radial-gradient(circle at 50% 50%, rgba(18, 76, 61, 0.40), transparent 70%);
+  opacity: 0.74;
+}
+
+body.is-demon .theme-panel,
+body.is-demon .team-panel {
+  border-color: rgba(130, 190, 166, 0.17);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(38, 109, 90, 0.18), transparent 32%),
+    linear-gradient(155deg, rgba(18, 34, 29, 0.94), rgba(8, 19, 16, 0.89));
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.38);
+}
+
+body.is-demon .calendar-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(198, 80, 80, 0.22);
+  background:
+    radial-gradient(circle at 7% 0%, rgba(31, 111, 92, 0.21), transparent 31%),
+    linear-gradient(155deg, rgba(18, 34, 29, 0.95), rgba(8, 19, 16, 0.91));
+  box-shadow: 0 28px 76px rgba(0, 0, 0, 0.40), inset 0 0 0 1px rgba(158, 209, 188, 0.05);
+}
+
+body.is-demon .calendar-card::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #1f6f5c 0 13px, #0b1714 13px 26px);
+  content: "";
+}
+
+body.is-demon .calendar-card::after {
+  position: absolute;
+  z-index: 0;
+  top: 86px;
+  right: 24px;
+  color: rgba(198, 80, 80, 0.055);
+  content: "呼吸";
+  font-family: var(--font-display);
+  font-size: 132px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  line-height: 1;
+}
+
+body.is-demon .calendar-card > .calendar-toolbar,
+body.is-demon .calendar-card > .calendar-body,
+body.is-demon .calendar-card > .calendar-footer,
+body.is-demon .calendar-card > .month-matches {
+  position: relative;
+  z-index: 2;
+}
+
+body.is-demon .date-eyebrow .demon-eyebrow {
+  display: inline-block;
+  color: #d37b72;
+  font-weight: 700;
+}
+
+body.is-demon .date-eyebrow .eyebrow-dot.demon-eyebrow {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #1f6f5c;
+}
+
+body.is-demon .date-heading h1 {
+  color: #eef4ef;
+}
+
+body.is-demon .year-title {
+  color: #c65050;
+}
+
+body.is-demon .weekday-row {
+  padding: 6px 2px 8px;
+  border-bottom: 1px solid rgba(198, 80, 80, 0.18);
+  background:
+    repeating-linear-gradient(90deg, rgba(31, 111, 92, 0.14) 0 13px, transparent 13px 26px);
+}
+
+body.is-demon .weekday-row span {
+  color: #9cc9b6;
+}
+
+body.is-demon .weekday-row span.weekend {
+  color: #d1948d;
+}
+
+body.is-demon .day-cell {
+  border-color: rgba(124, 183, 159, 0.11);
+  background: linear-gradient(155deg, rgba(24, 43, 37, 0.76), rgba(10, 24, 20, 0.72));
+}
+
+body.is-demon .day-cell:hover {
+  border-color: rgba(198, 80, 80, 0.38);
+  background: linear-gradient(155deg, rgba(35, 61, 52, 0.96), rgba(17, 38, 31, 0.94));
+}
+
+body.is-demon .day-cell.is-other-month {
+  background: rgba(12, 27, 23, 0.46);
+}
+
+body.is-demon .day-cell.is-today {
+  border-color: #c65050;
+  background: linear-gradient(155deg, #257a64, #103b30);
+  box-shadow: 0 12px 24px rgba(31, 111, 92, 0.24);
+}
+
+body.is-demon .day-cell.is-selected:not(.is-today) {
+  border-color: #c65050;
+  background: rgba(198, 80, 80, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(198, 80, 80, 0.18);
+}
+
+body.is-demon .calendar-footer {
+  border-top-color: rgba(198, 80, 80, 0.22);
+}
+
+body.is-demon .selected-day-badge {
+  border-color: rgba(198, 80, 80, 0.25);
+  background: linear-gradient(145deg, rgba(31, 111, 92, 0.25), rgba(198, 80, 80, 0.15));
+}
+
+body.is-demon .theme-tag,
+body.is-demon .preset-card.is-active {
+  background: rgba(198, 80, 80, 0.16);
+  color: #e4a29b;
+}
+
+body.is-demon .date-picker-popover {
+  border-color: rgba(198, 80, 80, 0.20);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(31, 111, 92, 0.20), transparent 35%),
+    var(--surface-strong);
+}
+
+body.is-demon .date-picker-month.is-selected-month {
+  border-color: #c65050;
+  background: linear-gradient(145deg, #257a64, #143f34);
+}
+
+body.is-demon .month-matches,
+body.is-demon .day-match,
+body.is-demon .day-cell.has-match::before,
+body.is-demon .mini-day.has-match::after,
+body.is-demon .picker-match-count,
+body.is-demon .calendar-footer.has-match .selected-match {
+  display: none;
+}
+
+body.is-demon .day-cell.has-match {
+  border-color: rgba(124, 183, 159, 0.11);
+  background: linear-gradient(155deg, rgba(24, 43, 37, 0.76), rgba(10, 24, 20, 0.72));
+  box-shadow: none;
+}
+
+body.is-demon .day-cell.has-match .day-lunar {
+  display: block;
+  padding-right: 0;
+}
+
+body.is-demon .calendar-footer.has-match .selected-countdown,
+body.is-demon .calendar-footer.has-match .footer-aside {
+  display: flex;
+}
+
+body.is-demon .selected-relative {
+  background: rgba(198, 80, 80, 0.14);
+  color: #e2a09a;
+}
+
+body.is-demon .prompt-form button {
+  background: #c65050;
+}
+
+@media (max-width: 560px) {
+  body.is-demon .date-eyebrow #lunarYearLabel,
+  body.is-demon .date-eyebrow .demon-eyebrow {
+    display: none;
+  }
+
+  body.is-demon .calendar-card::after {
+    top: 110px;
+    right: -18px;
+    font-size: 100px;
+  }
+}
