@@ -690,7 +690,9 @@ let cheerNoiseSource = null;
 let cheerClapBuffer = null;
 let cheerTimer = 0;
 let cheerStep = 0;
+let cheerChantIndex = 0;
 let cheerIsPlaying = false;
+const CHEER_CHANTS = ['大连是冠军', '蓝色力量', '为大连而战', '英博加油'];
 const lunarCache = new Map();
 const lunarFormatter = new Intl.DateTimeFormat('zh-CN-u-ca-chinese', { month: 'long', day: 'numeric' });
 const lunarYearFormatter = new Intl.DateTimeFormat('zh-CN-u-ca-chinese', { year: 'numeric' });
@@ -1339,8 +1341,24 @@ function updateNorthStandUI() {
   if (button === null || status === null) return;
   button.classList.toggle('is-playing', cheerIsPlaying);
   button.setAttribute('aria-pressed', cheerIsPlaying ? 'true' : 'false');
-  button.setAttribute('aria-label', cheerIsPlaying ? '停止大连北看台助威歌曲' : '播放大连北看台助威歌曲');
-  status.textContent = cheerIsPlaying ? '正在助威 · 点击停止' : 'DALIAN NORTH STAND';
+  button.setAttribute('aria-label', cheerIsPlaying ? '停止大连北看台战歌' : '播放大连北看台战歌，歌词包含大连是冠军和蓝色力量');
+  status.textContent = cheerIsPlaying ? '正在助威 · 点击停止' : '大连是冠军 · 蓝色力量';
+}
+
+function speakCheerChant(text) {
+  const status = $('#northStandStatus');
+  if (status !== null) status.textContent = `${text} · 点击停止`;
+  if (cheerIsPlaying === false || ('speechSynthesis' in window) === false) return;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'zh-CN';
+  utterance.rate = 0.82;
+  utterance.pitch = 1.12;
+  utterance.volume = 0.95;
+  const voices = window.speechSynthesis.getVoices();
+  const chineseVoice = voices.find((voice) => voice.lang.toLowerCase().startsWith('zh'));
+  if (chineseVoice) utterance.voice = chineseVoice;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
 }
 
 function scheduleCheerStep() {
@@ -1348,6 +1366,10 @@ function scheduleCheerStep() {
   const context = cheerAudioContext;
   const time = context.currentTime + 0.06;
   const melody = [293.66, 0, 329.63, 0, 392.0, 0, 329.63, 0, 293.66, 0, 261.63, 0, 220.0, 0, 246.94, 0];
+  if (cheerStep === 0) {
+    speakCheerChant(CHEER_CHANTS[cheerChantIndex]);
+    cheerChantIndex = (cheerChantIndex + 1) % CHEER_CHANTS.length;
+  }
   if (cheerStep % 4 === 0) playCheerKick(context, cheerMasterGain, time);
   if (cheerStep % 4 === 2 && cheerClapBuffer !== null) playCheerClap(context, cheerMasterGain, time, cheerClapBuffer);
   const note = melody[cheerStep];
@@ -1389,15 +1411,17 @@ function startNorthStandCheer() {
 
   cheerIsPlaying = true;
   cheerStep = 0;
+  cheerChantIndex = 0;
   updateNorthStandUI();
   scheduleCheerStep();
-  showToast('北看台助威开始 · 为大连而战');
+  showToast('北看台战歌开始 · 大连是冠军');
 }
 
 function stopNorthStandCheer(silent = false) {
   if (cheerIsPlaying === false) return;
   cheerIsPlaying = false;
   window.clearTimeout(cheerTimer);
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   const oldContext = cheerAudioContext;
   const oldMasterGain = cheerMasterGain;
   const oldNoiseSource = cheerNoiseSource;

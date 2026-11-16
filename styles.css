@@ -5199,3 +5199,14 @@ body.is-yingbo .today-chip .live-dot {
     display: none;
   }
 }
+
+/* North Stand chant lyrics */
+.north-stand-copy small {
+  font-size: 7px;
+  letter-spacing: 0.045em;
+}
+
+.north-stand-button.is-playing .north-stand-copy small {
+  color: var(--secondary);
+  font-weight: 750;
+}
