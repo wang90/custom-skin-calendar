@@ -6,7 +6,6 @@
 | --- | --- | --- |
 | `demon-bg.jpg` | 鬼灭主题整页背景 | B 站专栏图集：`https://i0.hdslb.com/bfs/article/3e166cf7db73a26ce5a03953f55b587d298fb621.jpg` |
 | `demon-preview.jpg` | 主题预览插画 | B 站专栏图集：`https://i0.hdslb.com/bfs/article/a5c26e65d2f11bddea07bf6ed5b6a00e964feb6c.png` |
-| `demon-art.jpg` | 日历右侧装饰图 | 搜狐图片：`http://p6.itc.cn/c_zoom,h_1200,g_face/images01/20200607/96c755687fc0487dbf060f15e34ed90b.jpeg` |
 | `demon-avatar.jpg` | 主题头像 / 圆形徽章 | B 站专栏图集：`https://i0.hdslb.com/bfs/article/a914166dd1491c7fe84e8242ae7cd6fd3b0104ba.jpg` |
 
 如需长期公开发布，建议替换为已获得授权的官方素材，或按要求下架相关图片。

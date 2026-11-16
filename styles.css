@@ -5467,7 +5467,6 @@ body.is-demon .prompt-form button {
 
 /* Demon Slayer theme artwork */
 .demon-preview-photo,
-.demon-art,
 .demon-calendar-crest {
   display: none;
 }
@@ -5524,28 +5523,6 @@ body.is-demon .preview-orb {
   opacity: 0;
 }
 
-body.is-demon .demon-art {
-  position: absolute;
-  z-index: 0;
-  top: 26px;
-  right: -42px;
-  display: block;
-  width: 360px;
-  height: calc(100% - 112px);
-  overflow: hidden;
-  opacity: 0.48;
-  pointer-events: none;
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.32) 32%, #000 72%);
-}
-
-.demon-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 34%;
-  filter: saturate(1.08) contrast(1.04);
-}
-
 body.is-demon .demon-calendar-crest {
   display: block;
   flex: none;
@@ -5568,25 +5545,10 @@ body.is-demon .date-title-row {
   gap: 11px;
 }
 
-@media (max-width: 900px) {
-  body.is-demon .demon-art {
-    right: -80px;
-    width: 300px;
-    opacity: 0.34;
-  }
-}
-
 @media (max-width: 560px) {
   body.is-demon .demon-calendar-crest {
     width: 38px;
     height: 38px;
-  }
-
-  body.is-demon .demon-art {
-    top: 90px;
-    right: -105px;
-    width: 260px;
-    opacity: 0.25;
   }
 
   .demon-preview-title {
@@ -5635,11 +5597,31 @@ body.is-demon .brand-mark .demon-mark {
   object-position: center 42%;
 }
 
-body.is-demon .demon-art {
-  opacity: 0.52;
+/* Keep demon artwork outside the calendar grid */
+body.is-demon .calendar-card {
+  background:
+    radial-gradient(circle at 7% 0%, rgba(31, 111, 92, 0.13), transparent 29%),
+    linear-gradient(155deg, #14261f 0%, #0a1713 100%);
+  backdrop-filter: none;
 }
 
-body.is-demon .demon-art img {
-  object-position: center 36%;
-  filter: saturate(1.05) contrast(1.02);
+body.is-demon .calendar-body {
+  border-radius: 8px;
+  background: rgba(6, 15, 12, 0.32);
+}
+
+body.is-demon .day-cell {
+  background: linear-gradient(155deg, #1a3028 0%, #0d1e18 100%);
+}
+
+body.is-demon .day-cell.is-other-month {
+  background: #0c1915;
+}
+
+body.is-demon .day-cell:hover {
+  background: linear-gradient(155deg, #28493d 0%, #142b23 100%);
+}
+
+body.is-demon .calendar-card::after {
+  opacity: 0.72;
 }
