@@ -137,52 +137,250 @@ const PRESETS = [
 
 const PLAYERS = [
   {
-    id: 'malele',
-    name: '马莱莱',
-    number: '11',
-    position: '前锋',
-    image: 'assets/players/malele.jpg',
-    tagline: '高高跃起，头槌破门——把主场气氛彻底点燃。'
+    "id": "ge-peng",
+    "name": "葛彭",
+    "number": "1",
+    "position": "门将",
+    "image": "assets/players/roster/ge-peng.png",
+    "tagline": "把守最后一道防线，为英博守住每一次希望。"
   },
   {
-    id: 'stanciu',
-    name: '斯坦丘',
-    number: '10',
-    position: '中场',
-    image: 'assets/players/stanciu.jpg',
-    tagline: '禁区左侧小角度爆射，皮球直挂球门死角。'
+    "id": "mamadou-traore",
+    "name": "马马杜",
+    "number": "2",
+    "position": "后卫",
+    "image": "assets/players/roster/mamadou-traore.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
   },
   {
-    id: 'zhu-pengyu',
-    name: '朱鹏宇',
-    number: '16',
-    position: '前锋',
-    image: 'assets/players/zhu-pengyu.jpg',
-    tagline: '年轻前锋的冷静一击，为足球城写下新的进球。'
+    "id": "ismik-alimi",
+    "name": "阿利米",
+    "number": "4",
+    "position": "中场",
+    "image": "assets/players/roster/ismik-alimi.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
   },
   {
-    id: 'mao-weijie',
-    name: '毛伟杰',
-    number: '22',
-    position: '中场',
-    image: 'assets/players/mao-weijie.jpg',
-    tagline: '凌空抽射，世界波划破夜空——少年自有少年锋芒。'
+    "id": "peng-shunjie",
+    "name": "彭顺杰",
+    "number": "5",
+    "position": "后卫",
+    "image": "assets/players/roster/peng-shunjie.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
   },
   {
-    id: 'lv-zhuoyi',
-    name: '吕焯毅',
-    number: '38',
-    position: '后卫',
-    image: 'assets/players/lv-zhuoyi.jpg',
-    tagline: '禁区外果断起脚，一记远射打破僵局。'
+    "id": "song-yue",
+    "name": "宋岳",
+    "number": "6",
+    "position": "后卫",
+    "image": "assets/players/roster/song-yue.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
   },
   {
-    id: 'liao-jintao',
-    name: '廖锦涛',
-    number: '40',
-    position: '中场',
-    image: 'assets/players/liao-jintao.jpg',
-    tagline: '中场覆盖与推进，让每一次攻防都有回应。'
+    "id": "luo-jing",
+    "name": "罗竞",
+    "number": "7",
+    "position": "中场",
+    "image": "assets/players/roster/luo-jing.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "zhang-huachen",
+    "name": "张华晨",
+    "number": "8",
+    "position": "中场",
+    "image": "assets/players/roster/zhang-huachen.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "delgado",
+    "name": "德尔加多",
+    "number": "9",
+    "position": "中场",
+    "image": "assets/players/roster/delgado.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "stanciu",
+    "name": "斯坦丘",
+    "number": "10",
+    "position": "中场",
+    "image": "assets/players/roster/stanciu.png",
+    "tagline": "中场节拍器，一脚传球就能改变比赛的方向。",
+    "actionImage": "assets/players/stanciu.jpg"
+  },
+  {
+    "id": "malele",
+    "name": "马莱莱",
+    "number": "11",
+    "position": "前锋",
+    "image": "assets/players/roster/malele.png",
+    "tagline": "高高跃起，头槌破门——把主场气氛彻底点燃。",
+    "actionImage": "assets/players/malele.jpg"
+  },
+  {
+    "id": "feng-boxuan",
+    "name": "冯博轩",
+    "number": "12",
+    "position": "后卫",
+    "image": "assets/players/roster/feng-boxuan.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
+  },
+  {
+    "id": "wen-jiabao",
+    "name": "温家宝",
+    "number": "15",
+    "position": "后卫",
+    "image": "assets/players/roster/wen-jiabao.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
+  },
+  {
+    "id": "zhu-pengyu",
+    "name": "朱鹏宇",
+    "number": "16",
+    "position": "前锋",
+    "image": "assets/players/roster/zhu-pengyu.png",
+    "tagline": "年轻前锋的冷静一击，为足球城写下新的进球。",
+    "actionImage": "assets/players/zhu-pengyu.jpg"
+  },
+  {
+    "id": "liu-weiguo",
+    "name": "刘伟国",
+    "number": "20",
+    "position": "门将",
+    "image": "assets/players/roster/liu-weiguo.png",
+    "tagline": "把守最后一道防线，为英博守住每一次希望。"
+  },
+  {
+    "id": "lv-peng",
+    "name": "吕鹏",
+    "number": "21",
+    "position": "中场",
+    "image": "assets/players/roster/lv-peng.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "mao-weijie",
+    "name": "毛伟杰",
+    "number": "22",
+    "position": "中场",
+    "image": "assets/players/roster/mao-weijie.png",
+    "tagline": "凌空抽射，世界波划破夜空——少年自有少年锋芒。",
+    "actionImage": "assets/players/mao-weijie.jpg"
+  },
+  {
+    "id": "huang-shan",
+    "name": "黄山",
+    "number": "23",
+    "position": "中场",
+    "image": "assets/players/roster/huang-shan.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "bi-jinhao",
+    "name": "毕津浩",
+    "number": "24",
+    "position": "后卫",
+    "image": "assets/players/roster/bi-jinhao.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
+  },
+  {
+    "id": "huang-zihao",
+    "name": "黄子豪",
+    "number": "26",
+    "position": "门将",
+    "image": "assets/players/roster/huang-zihao.png",
+    "tagline": "把守最后一道防线，为英博守住每一次希望。"
+  },
+  {
+    "id": "yang-mingrui",
+    "name": "杨铭锐",
+    "number": "27",
+    "position": "前锋",
+    "image": "assets/players/roster/yang-mingrui.png",
+    "tagline": "向前，再向前，用进球点燃梭鱼湾。"
+  },
+  {
+    "id": "sun-kangbo",
+    "name": "孙康博",
+    "number": "28",
+    "position": "后卫",
+    "image": "assets/players/roster/sun-kangbo.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
+  },
+  {
+    "id": "achimpong",
+    "name": "阿奇姆彭",
+    "number": "30",
+    "position": "前锋",
+    "image": "assets/players/roster/achimpong.png",
+    "tagline": "向前，再向前，用进球点燃梭鱼湾。"
+  },
+  {
+    "id": "wang-xiaofeng",
+    "name": "王晓峰",
+    "number": "32",
+    "position": "门将",
+    "image": "assets/players/roster/wang-xiaofeng.png",
+    "tagline": "把守最后一道防线，为英博守住每一次希望。"
+  },
+  {
+    "id": "cao-haiqing",
+    "name": "曹海清",
+    "number": "33",
+    "position": "后卫",
+    "image": "assets/players/roster/cao-haiqing.png",
+    "tagline": "硬朗防守，寸土不让，为蓝色战袍拼到最后一刻。"
+  },
+  {
+    "id": "zhang-chengrui",
+    "name": "张城瑞",
+    "number": "37",
+    "position": "中场",
+    "image": "assets/players/roster/zhang-chengrui.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "lv-zhuoyi",
+    "name": "吕焯毅",
+    "number": "38",
+    "position": "中场",
+    "image": "assets/players/roster/lv-zhuoyi.png",
+    "tagline": "边路往返不停歇，把蓝色战袍跑成一道风景。",
+    "actionImage": "assets/players/lv-zhuoyi.jpg"
+  },
+  {
+    "id": "liao-jintao",
+    "name": "廖锦涛",
+    "number": "40",
+    "position": "中场",
+    "image": "assets/players/roster/liao-jintao.png",
+    "tagline": "沉稳与灵气并存，在中场写下属于英博的节奏。",
+    "actionImage": "assets/players/liao-jintao.jpg"
+  },
+  {
+    "id": "feng-jin",
+    "name": "冯劲",
+    "number": "44",
+    "position": "前锋",
+    "image": "assets/players/roster/feng-jin.png",
+    "tagline": "向前，再向前，用进球点燃梭鱼湾。"
+  },
+  {
+    "id": "zeng-junhao",
+    "name": "曾俊豪",
+    "number": "56",
+    "position": "中场",
+    "image": "assets/players/roster/zeng-junhao.png",
+    "tagline": "连接攻防，掌控节奏，让每一次推进更有力量。"
+  },
+  {
+    "id": "xiao-lirong",
+    "name": "肖力荣",
+    "number": "59",
+    "position": "前锋",
+    "image": "assets/players/roster/xiao-lirong.png",
+    "tagline": "向前，再向前，用进球点燃梭鱼湾。"
   }
 ];
 
@@ -691,7 +889,7 @@ let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
 let selectedDate = new Date(today);
 let currentView = 'month';
 let currentTheme = PRESETS[0];
-let featuredPlayerId = PLAYERS[0].id;
+let featuredPlayerId = 'malele';
 let pickerYear = viewDate.getFullYear();
 let generateTimer = 0;
 let toastTimer = 0;
@@ -1219,8 +1417,9 @@ function updateTeamPreview() {
   const number = $('#teamPreviewNumber');
   const name = $('#teamPreviewName');
   if (image) {
-    image.src = player.image;
-    image.alt = `大连英博 ${player.number} 号球员 ${player.name} 比赛照片`;
+    const previewImage = player.actionImage || player.image;
+    image.src = previewImage;
+    image.alt = `大连英博 ${player.number} 号球员 ${player.name} 照片`;
   }
   if (number) number.textContent = player.number;
   if (name) name.textContent = player.name;
@@ -1234,12 +1433,12 @@ function renderPlayerGrid() {
   const grid = $('#playerGrid');
   if (grid === null) return;
   grid.innerHTML = PLAYERS.map((player) => `
-    <button class="player-card" type="button" data-player-id="${player.id}" aria-label="查看${player.name}比赛照片">
+    <button class="player-card" type="button" data-player-id="${player.id}" aria-label="查看${player.name}球员资料">
       <span class="player-photo">
-        <img src="${player.image}" alt="大连英博 ${player.number} 号 ${player.name} 比赛照片" loading="lazy">
-        <span class="player-match-tag">MATCH</span>
+        <img src="${player.image}" alt="大连英博 ${player.number} 号 ${player.name}" loading="lazy">
+        <span class="player-match-tag">PLAYER</span>
         <span class="player-number">${player.number}</span>
-        <span class="player-photo-action" aria-hidden="true">高清大图</span>
+        <span class="player-photo-action" aria-hidden="true">查看资料</span>
       </span>
       <span class="player-card-info">
         <strong>${player.name}</strong>
@@ -1277,8 +1476,10 @@ function openPlayerModal(player, trigger) {
   window.clearTimeout(playerModalTimer);
 
   const image = $('#playerModalImg');
-  image.src = player.image;
-  image.alt = `大连英博 ${player.number} 号球员 ${player.name} 比赛照片`;
+  const displayImage = player.actionImage || player.image;
+  image.src = displayImage;
+  image.alt = `大连英博 ${player.number} 号球员 ${player.name} 照片`;
+  image.classList.toggle('is-portrait-avatar', player.actionImage === undefined);
   $('#playerModalNumber').textContent = player.number;
   $('#playerModalNumberText').textContent = player.number;
   $('#playerModalName').textContent = player.name;

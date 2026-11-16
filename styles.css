@@ -5771,3 +5771,43 @@ body.is-demon .calendar-card::after {
     radial-gradient(circle at 50% 50%, transparent 0 10px, rgba(255, 255, 255, 0.24) 10.5px 11px, transparent 11.5px),
     repeating-linear-gradient(90deg, transparent 0 14px, rgba(255, 255, 255, 0.13) 14px 15px);
 }
+
+/* Full 30-player roster */
+.player-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.player-card-info {
+  padding: 4px 2px 1px;
+}
+
+.player-card-info strong {
+  font-size: 9.5px;
+}
+
+.player-card-info span {
+  font-size: 6.8px;
+}
+
+.player-photo img {
+  object-position: center 18%;
+}
+
+.player-modal-photo img {
+  object-position: center 28%;
+}
+
+@media (max-width: 780px) {
+  .player-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.player-modal-photo img.is-portrait-avatar {
+  object-fit: contain;
+  object-position: center center;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(44, 128, 105, 0.26), transparent 42%),
+    linear-gradient(160deg, #17372d, #091612);
+}
