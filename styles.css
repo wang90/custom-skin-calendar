@@ -5593,3 +5593,53 @@ body.is-demon .date-title-row {
     font-size: 17px;
   }
 }
+
+/* Demon Slayer web artwork backgrounds */
+body.is-demon {
+  background-color: #07100d;
+  background-image:
+    linear-gradient(120deg, rgba(5, 14, 11, 0.86) 0%, rgba(8, 27, 21, 0.62) 48%, rgba(4, 11, 9, 0.90) 100%),
+    radial-gradient(circle at 82% 12%, rgba(198, 80, 80, 0.18), transparent 30%),
+    url("assets/demon/demon-bg.jpg");
+  background-position: center, center, center 32%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body.is-demon .theme-panel,
+body.is-demon .team-panel {
+  background:
+    radial-gradient(circle at 8% 5%, rgba(38, 109, 90, 0.17), transparent 30%),
+    linear-gradient(155deg, rgba(18, 34, 29, 0.86), rgba(8, 19, 16, 0.76));
+  backdrop-filter: blur(28px) saturate(125%);
+}
+
+body.is-demon .calendar-card {
+  background:
+    radial-gradient(circle at 7% 0%, rgba(31, 111, 92, 0.18), transparent 29%),
+    linear-gradient(155deg, rgba(18, 34, 29, 0.88), rgba(8, 19, 16, 0.78));
+  backdrop-filter: blur(28px) saturate(120%);
+}
+
+body.is-demon .brand-mark .demon-mark {
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(242, 199, 92, 0.52);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 4px 12px rgba(0, 0, 0, 0.24);
+}
+
+.demon-preview-photo img {
+  object-position: center 42%;
+}
+
+body.is-demon .demon-art {
+  opacity: 0.52;
+}
+
+body.is-demon .demon-art img {
+  object-position: center 36%;
+  filter: saturate(1.05) contrast(1.02);
+}
