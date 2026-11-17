@@ -30,6 +30,20 @@ const PRESETS = [
     demon: true
   },
   {
+    id: 'conan',
+    name: '名侦探柯南',
+    tag: '推理',
+    desc: '真相只有一个，每一天都有新线索。',
+    accent: '#1d4f91',
+    secondary: '#d8433f',
+    bg: '#f2f5f8',
+    bg2: '#fbfaf5',
+    pattern: 'casefile',
+    dark: false,
+    radius: 6,
+    conan: true
+  },
+  {
     id: 'forest',
     name: '晨雾松林',
     tag: '自然',
@@ -1271,12 +1285,13 @@ function normalizeTheme(theme) {
     secondary: isHexColor(source.secondary) ? source.secondary : fallback.secondary,
     bg: isHexColor(source.bg) ? source.bg : fallback.bg,
     bg2: isHexColor(source.bg2) ? source.bg2 : fallback.bg2,
-    pattern: ['aurora', 'dots', 'grid', 'paper', 'checks'].includes(source.pattern) ? source.pattern : fallback.pattern,
+    pattern: ['aurora', 'dots', 'grid', 'paper', 'checks', 'casefile'].includes(source.pattern) ? source.pattern : fallback.pattern,
     dark: Boolean(source.dark),
     radius: Number.isFinite(Number(source.radius)) ? clamp(Number(source.radius), 4, 8) : fallback.radius,
     generated: Boolean(source.generated),
     team: Boolean(source.team) || source.id === 'yingbo',
-    demon: Boolean(source.demon) || source.id === 'demon-slayer'
+    demon: Boolean(source.demon) || source.id === 'demon-slayer',
+    conan: Boolean(source.conan) || source.id === 'conan'
   };
 }
 
@@ -1315,11 +1330,14 @@ function applyTheme(theme, persist = true) {
   document.body.dataset.mode = dark ? 'dark' : 'light';
   document.body.classList.toggle('is-yingbo', normalized.team);
   document.body.classList.toggle('is-demon', normalized.demon);
+  document.body.classList.toggle('is-conan', normalized.conan);
   root.style.colorScheme = dark ? 'dark' : 'light';
   if (normalized.team) {
     document.title = '大连英博 · 2026 中超冠军 · 日历工坊';
   } else if (normalized.demon) {
     document.title = '鬼灭之刃主题 · 日历工坊';
+  } else if (normalized.conan) {
+    document.title = '名侦探柯南主题 · 日历工坊';
   } else {
     document.title = '日历工坊 · Calendar Studio';
   }
@@ -1328,11 +1346,13 @@ function applyTheme(theme, persist = true) {
   if (brandName) {
     if (normalized.team) brandName.textContent = '英博冠军日历';
     else if (normalized.demon) brandName.textContent = '鬼灭日历';
+    else if (normalized.conan) brandName.textContent = '柯南日历';
     else brandName.textContent = '日历工坊';
   }
   if (brandSub) {
     if (normalized.team) brandSub.textContent = 'DALIAN YINGBO · CHAMPIONS';
     else if (normalized.demon) brandSub.textContent = 'KIMETSU CALENDAR';
+    else if (normalized.conan) brandSub.textContent = 'DETECTIVE CONAN';
     else brandSub.textContent = 'CALENDAR STUDIO';
   }
 
@@ -1380,6 +1400,7 @@ function updateThemeUI() {
 const PRESET_ICONS = {
   yingbo: '<svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8v4.4a4 4 0 0 1-8 0V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 6H5.3v1.4a3 3 0 0 0 3 3M16 6h2.7v1.4a3 3 0 0 1-3 3M12 12.5v4M8.7 20h6.6M9.8 17h4.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
   'demon-slayer': '<svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="4" fill="currentColor" fill-opacity=".32"/><path d="M4 20 20 4M6 18l-2 2M15 5l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  conan: '<svg viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="5.6" stroke="currentColor" stroke-width="1.8"/><path d="m14.2 14.2 5.3 5.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7.6 9.4h4.8M8 12h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M17.5 4.5 21 4l-.5 3.5-3-3Z" fill="currentColor" opacity=".7"/></svg>',
   forest: '<svg viewBox="0 0 24 24" fill="none"><path d="M20 4C12 4 5 8 5 15c0 3 2 5 5 5 7 0 10-8 10-16Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 20c3-6 7-9 12-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
   sakura: '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 9c-3.8-3.8-4.8-6.2-2.2-7 2.2-.7 3.2 2.4 2.2 7ZM12 15c3.8 3.8 4.8 6.2 2.2 7-2.2.7-3.2-2.4-2.2-7ZM9 12c-3.8 3.8-6.2 4.8-7 2.2-.7-2.2 2.4-3.2 7-2.2ZM15 12c3.8-3.8 6.2-4.8 7-2.2.7 2.2-2.4 3.2-7 2.2Z" stroke="currentColor" stroke-width="1.4"/></svg>',
   ocean: '<svg viewBox="0 0 24 24" fill="none"><path d="M3 9c3-4 5-4 8 0s5 4 8 0M3 15c3-4 5-4 8 0s5 4 8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',

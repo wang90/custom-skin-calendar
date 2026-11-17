@@ -5811,3 +5811,342 @@ body.is-demon .calendar-card::after {
     radial-gradient(circle at 50% 32%, rgba(44, 128, 105, 0.26), transparent 42%),
     linear-gradient(160deg, #17372d, #091612);
 }
+
+/* Detective Conan theme */
+.conan-mark,
+.conan-preview-photo,
+.conan-calendar-crest,
+.conan-eyebrow {
+  display: none;
+}
+
+body.is-conan .brand-mark .calendar-mark,
+body.is-conan .brand-mark .team-mark,
+body.is-conan .brand-mark .demon-mark {
+  display: none;
+}
+
+body.is-conan .brand-mark .conan-mark {
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(216, 67, 63, 0.28), 0 4px 12px rgba(4, 20, 43, 0.22);
+}
+
+body.is-conan .brand-mark {
+  border-color: rgba(216, 67, 63, 0.38);
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.22), transparent 38%),
+    linear-gradient(145deg, #102e54, #1d4f91);
+  color: #ffffff;
+}
+
+body.is-conan .brand-copy strong {
+  color: #183c68;
+}
+
+body.is-conan .brand-copy small {
+  color: #c93d3b;
+  font-weight: 750;
+}
+
+body.is-conan {
+  background-color: #edf3f8;
+  background-image:
+    linear-gradient(118deg, rgba(246, 250, 255, 0.88) 0%, rgba(229, 240, 250, 0.67) 47%, rgba(251, 249, 242, 0.84) 100%),
+    radial-gradient(circle at 82% 15%, rgba(216, 67, 63, 0.15), transparent 28%),
+    url("assets/conan/conan-bg.jpg");
+  background-position: center, center, center 42%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body[data-pattern="casefile"] .ambient-pattern {
+  background-image:
+    linear-gradient(rgba(29, 79, 145, 0.20) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 79, 145, 0.20) 1px, transparent 1px),
+    radial-gradient(circle at 72% 26%, rgba(216, 67, 63, 0.16), transparent 24%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+  mask-image: linear-gradient(125deg, transparent 8%, #000 47%, transparent 94%);
+  opacity: 0.28;
+}
+
+body.is-conan .theme-panel {
+  border-color: rgba(29, 79, 145, 0.18);
+  background:
+    radial-gradient(circle at 7% 4%, rgba(53, 121, 188, 0.14), transparent 31%),
+    linear-gradient(155deg, rgba(252, 254, 255, 0.92), rgba(229, 241, 252, 0.80));
+  box-shadow: 0 24px 72px rgba(22, 65, 124, 0.16);
+}
+
+body.is-conan .calendar-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(29, 79, 145, 0.22);
+  background:
+    radial-gradient(circle at 7% 0%, rgba(44, 109, 173, 0.10), transparent 31%),
+    linear-gradient(155deg, #fcfbf6 0%, #eef4fa 100%);
+  box-shadow: 0 24px 72px rgba(22, 65, 124, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.74);
+}
+
+body.is-conan .calendar-card::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1d4f91 0 68%, #d8433f 68% 100%);
+  content: "";
+}
+
+body.is-conan .calendar-card::after {
+  position: absolute;
+  z-index: 0;
+  top: 83px;
+  right: 24px;
+  color: rgba(29, 79, 145, 0.055);
+  content: "CASE FILE";
+  font-family: "Courier New", monospace;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  pointer-events: none;
+}
+
+body.is-conan .calendar-card > .calendar-toolbar,
+body.is-conan .calendar-card > .calendar-body,
+body.is-conan .calendar-card > .calendar-footer,
+body.is-conan .calendar-card > .month-matches {
+  position: relative;
+  z-index: 2;
+}
+
+body.is-conan .conan-preview-photo {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.conan-preview-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: scale(1.02);
+}
+
+.conan-preview-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 24, 47, 0.74) 0%, rgba(8, 24, 47, 0.22) 50%, rgba(8, 24, 47, 0.02) 80%),
+    linear-gradient(0deg, rgba(8, 24, 47, 0.60), transparent 52%);
+}
+
+.conan-preview-kicker {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  color: rgba(235, 244, 255, 0.72);
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.conan-preview-title {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38);
+}
+
+body.is-conan .preview-window,
+body.is-conan .preview-orb {
+  opacity: 0;
+}
+
+body.is-conan .conan-calendar-crest {
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: #eaf2fb;
+  box-shadow: 0 0 0 2px rgba(29, 79, 145, 0.44), 0 8px 18px rgba(21, 56, 101, 0.18);
+}
+
+.conan-calendar-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.is-conan .date-title-row {
+  gap: 11px;
+}
+
+body.is-conan .date-eyebrow .conan-eyebrow {
+  display: inline-block;
+  color: #c33e3c;
+  font-weight: 700;
+}
+
+body.is-conan .date-eyebrow .eyebrow-dot.conan-eyebrow {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #1d4f91;
+}
+
+body.is-conan .date-heading h1 {
+  color: #13375f;
+}
+
+body.is-conan .year-title {
+  color: #c93d3b;
+}
+
+body.is-conan .weekday-row {
+  padding: 6px 2px 8px;
+  border-bottom: 1px solid rgba(29, 79, 145, 0.14);
+  background: linear-gradient(90deg, rgba(29, 79, 145, 0.09), rgba(216, 67, 63, 0.035));
+  border-radius: 7px;
+}
+
+body.is-conan .weekday-row span {
+  color: #1d4f91;
+}
+
+body.is-conan .weekday-row span.weekend {
+  color: #c53d3b;
+}
+
+body.is-conan .day-cell {
+  border-color: rgba(29, 79, 145, 0.11);
+  background: #fbfaf5;
+}
+
+body.is-conan .day-cell:hover {
+  border-color: #1d4f91;
+  background: #e9f3ff;
+}
+
+body.is-conan .day-cell.is-other-month {
+  background: rgba(237, 244, 251, 0.66);
+}
+
+body.is-conan .day-cell.is-today {
+  border-color: #d8433f;
+  background: linear-gradient(150deg, #1d4f91, #102f59);
+  box-shadow: 0 12px 24px rgba(29, 79, 145, 0.20);
+}
+
+body.is-conan .day-cell.is-selected:not(.is-today) {
+  border-color: #d8433f;
+  background: rgba(216, 67, 63, 0.10);
+  box-shadow: inset 0 0 0 1px rgba(216, 67, 63, 0.12);
+}
+
+body.is-conan .calendar-footer {
+  border-top-color: rgba(29, 79, 145, 0.16);
+}
+
+body.is-conan .selected-day-badge {
+  border-color: rgba(216, 67, 63, 0.20);
+  background: linear-gradient(145deg, rgba(29, 79, 145, 0.14), rgba(216, 67, 63, 0.10));
+}
+
+body.is-conan .selected-relative {
+  background: rgba(216, 67, 63, 0.12);
+  color: #b43432;
+}
+
+body.is-conan .theme-tag,
+body.is-conan .preset-card.is-active {
+  background: rgba(29, 79, 145, 0.13);
+  color: #1d4f91;
+}
+
+body.is-conan .date-picker-popover {
+  border-color: rgba(29, 79, 145, 0.19);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(216, 67, 63, 0.10), transparent 34%),
+    var(--surface-strong);
+}
+
+body.is-conan .date-picker-month.is-selected-month {
+  border-color: #d8433f;
+  background: linear-gradient(145deg, #1d4f91, #153f72);
+}
+
+body.is-conan .prompt-form button {
+  background: #d8433f;
+}
+
+body.is-conan .month-matches,
+body.is-conan .day-match,
+body.is-conan .day-cell.has-match::before,
+body.is-conan .mini-day.has-match::after,
+body.is-conan .picker-match-count,
+body.is-conan .calendar-footer.has-match .selected-match {
+  display: none;
+}
+
+body.is-conan .day-cell.has-match {
+  border-color: rgba(29, 79, 145, 0.11);
+  background: #fbfaf5;
+  box-shadow: none;
+}
+
+body.is-conan .day-cell.has-match .day-lunar {
+  display: block;
+  padding-right: 0;
+}
+
+body.is-conan .calendar-footer.has-match .selected-countdown,
+body.is-conan .calendar-footer.has-match .footer-aside {
+  display: flex;
+}
+
+body.is-conan .preset-art[data-art-pattern="casefile"]::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.23) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.23) 1px, transparent 1px),
+    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.24), transparent 24%);
+  background-size: 12px 12px, 12px 12px, 100% 100%;
+}
+
+@media (max-width: 560px) {
+  body.is-conan .date-eyebrow #lunarYearLabel,
+  body.is-conan .date-eyebrow .conan-eyebrow {
+    display: none;
+  }
+
+  body.is-conan .conan-calendar-crest {
+    width: 38px;
+    height: 38px;
+  }
+
+  body.is-conan .calendar-card::after {
+    top: 110px;
+    right: -14px;
+    font-size: 25px;
+  }
+
+  .conan-preview-title {
+    font-size: 17px;
+  }
+}
