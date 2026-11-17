@@ -10,7 +10,7 @@
 - 日期选择器支持按年/月快速跳转、精确日期选择，并标出有比赛的月份
 - 周一开头，显示农历日期、传统节日、固定节日与二十四节气
 - 选中日期后可查看星期、ISO 周数、当年第几天与跨年倒计时
-- 12 套精心调配的主题预设，包含金色加冕的「英博冠军」主题、「鬼灭之刃」和风主题、「名侦探柯南」推理主题与「黑神话：悟空」神话主题
+- 13 套精心调配的主题预设，包含金色加冕的「英博冠军」主题、「鬼灭之刃」和风主题、「名侦探柯南」推理主题、「黑神话：悟空」神话主题与「影之刃零」黑暗武侠主题
 - 冠军主题包含金色冠军徽章、冠军绶带、五星标识、奖杯和飘落彩带
 - 英博球员图鉴：完整收录 30 名 2026 一线队球员，按号码和位置展示头像与资料；核心球员保留比赛实拍大图
 - 在月历和年历中标记 2026 赛季英博正式比赛日；已结束比赛显示比分，未开始比赛显示 VS
@@ -23,7 +23,8 @@
 - 鬼灭主题内置网络动漫壁纸、整页角色背景、主题预览插画和圆形角色头像；图片只放在页面背景与侧栏，不覆盖日历格
 - 「名侦探柯南」主题使用深蓝/红色推理配色、案件档案纹理、放大镜元素和动漫角色背景
 - 「黑神话：悟空」主题使用暗金/玄黑配色、神话云纹、天命水印和游戏角色背景
-- 支持通过 `?theme=yingbo`、`?theme=demon-slayer`、`?theme=conan` 或 `?theme=wukong` 直达指定主题
+- 「影之刃零」主题使用玄黑/赤红/冷金配色、刀锋斜线纹理、影境水印和游戏角色背景
+- 支持通过 `?theme=yingbo`、`?theme=demon-slayer`、`?theme=conan`、`?theme=wukong` 或 `?theme=phantom-blade` 直达指定主题
 - 输入任意场景、颜色或氛围描述，本地生成专属主题配色
 - 可微调主色、背景色、圆角与深色氛围
 - 主题与视图会自动保存在浏览器本地
@@ -36,6 +37,7 @@
 - 鬼灭之刃主题：<https://wang90.github.io/custom-skin-calendar/?theme=demon-slayer>
 - 名侦探柯南主题：<https://wang90.github.io/custom-skin-calendar/?theme=conan>
 - 黑神话：悟空主题：<https://wang90.github.io/custom-skin-calendar/?theme=wukong>
+- 影之刃零主题：<https://wang90.github.io/custom-skin-calendar/?theme=phantom-blade>
 
 ## 运行
 
@@ -59,6 +61,7 @@ python3 -m http.server 4173
 - `assets/demon/` — 鬼灭主题网络图片与版权来源说明
 - `assets/conan/` — 柯南主题网络图片与版权来源说明
 - `assets/wukong/` — 黑神话：悟空主题网络图片与版权来源说明
+- `assets/phantom/` — 影之刃零主题网络图片与版权来源说明
 - `assets/audio/` — 北看台战歌音频与来源说明
 
 ## 比赛数据来源
@@ -71,4 +74,4 @@ python3 -m http.server 4173
 
 ## 图片来源
 
-球员照片与头像来自公开比赛图集、报道及球迷屋阵容页，队徽和球场图来自公开报道参考图；鬼灭主题与柯南主题图片来自公开动漫壁纸图集，黑神话主题图片来自公开游戏壁纸与截图。所有素材仅用于主题演示，版权归原作者及原权利方所有。公开或商用前请替换为已获授权的素材，详见 `assets/players/CREDITS.md`、`assets/team/CREDITS.md`、`assets/demon/CREDITS.md`、`assets/conan/CREDITS.md`、`assets/wukong/CREDITS.md` 与 `assets/audio/CREDITS.md`。
+球员照片与头像来自公开比赛图集、报道及球迷屋阵容页，队徽和球场图来自公开报道参考图；鬼灭主题与柯南主题图片来自公开动漫壁纸图集，黑神话主题图片来自公开游戏壁纸与截图，影之刃零主题图片来自公开游戏壁纸和实机画面。所有素材仅用于主题演示，版权归原作者及原权利方所有。公开或商用前请替换为已获授权的素材，详见 `assets/players/CREDITS.md`、`assets/team/CREDITS.md`、`assets/demon/CREDITS.md`、`assets/conan/CREDITS.md`、`assets/wukong/CREDITS.md`、`assets/phantom/CREDITS.md` 与 `assets/audio/CREDITS.md`。

@@ -6494,3 +6494,348 @@ body.is-wukong .preset-art[data-art-pattern="myth"]::before {
     font-size: 17px;
   }
 }
+
+/* Phantom Blade Zero theme */
+.phantom-mark,
+.phantom-preview-photo,
+.phantom-calendar-crest,
+.phantom-eyebrow {
+  display: none;
+}
+
+body.is-phantom .brand-mark .calendar-mark,
+body.is-phantom .brand-mark .team-mark,
+body.is-phantom .brand-mark .demon-mark,
+body.is-phantom .brand-mark .conan-mark,
+body.is-phantom .brand-mark .wukong-mark {
+  display: none;
+}
+
+body.is-phantom .brand-mark .phantom-mark {
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(198, 160, 92, 0.58);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(159, 52, 57, 0.24), 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+body.is-phantom .brand-mark {
+  border-color: rgba(159, 52, 57, 0.46);
+  background:
+    radial-gradient(circle at 28% 18%, rgba(204, 160, 91, 0.16), transparent 38%),
+    linear-gradient(145deg, #25262b, #090a0c);
+  color: #e3c17f;
+}
+
+body.is-phantom .brand-copy strong {
+  color: #e8e2d7;
+}
+
+body.is-phantom .brand-copy small {
+  color: #c7a05d;
+  font-weight: 750;
+}
+
+body.is-phantom {
+  background-color: #07080a;
+  background-image:
+    linear-gradient(120deg, rgba(5, 6, 8, 0.92) 0%, rgba(19, 20, 24, 0.68) 48%, rgba(5, 6, 8, 0.94) 100%),
+    radial-gradient(circle at 82% 14%, rgba(159, 52, 57, 0.22), transparent 29%),
+    url("assets/phantom/phantom-bg.jpg");
+  background-position: center, center, center 46%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body[data-pattern="inkblade"] .ambient-pattern {
+  background-image:
+    repeating-linear-gradient(116deg, transparent 0 46px, rgba(198, 160, 92, 0.055) 46px 47px),
+    radial-gradient(ellipse at 74% 22%, rgba(159, 52, 57, 0.20), transparent 28%),
+    radial-gradient(ellipse at 18% 72%, rgba(99, 116, 134, 0.16), transparent 32%);
+  mask-image: linear-gradient(125deg, transparent 8%, #000 46%, transparent 94%);
+  opacity: 0.34;
+}
+
+body.is-phantom .theme-panel,
+body.is-phantom .team-panel {
+  border-color: rgba(159, 52, 57, 0.23);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(139, 45, 50, 0.16), transparent 31%),
+    linear-gradient(155deg, rgba(29, 30, 35, 0.93), rgba(9, 10, 12, 0.89));
+  backdrop-filter: blur(28px) saturate(120%);
+}
+
+body.is-phantom .calendar-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(159, 52, 57, 0.30);
+  background:
+    radial-gradient(circle at 7% 0%, rgba(159, 52, 57, 0.12), transparent 30%),
+    linear-gradient(155deg, #191a1f 0%, #0b0c0f 100%);
+  box-shadow: 0 28px 76px rgba(0, 0, 0, 0.54), inset 0 0 0 1px rgba(198, 160, 92, 0.06);
+}
+
+body.is-phantom .calendar-card::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9f3439 0%, #d15b4f 45%, #c6a05c 100%);
+  content: "";
+}
+
+body.is-phantom .calendar-card::after {
+  position: absolute;
+  z-index: 0;
+  top: 74px;
+  right: 20px;
+  color: rgba(159, 52, 57, 0.06);
+  content: "影";
+  font-family: var(--font-display);
+  font-size: 88px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+body.is-phantom .calendar-card > .calendar-toolbar,
+body.is-phantom .calendar-card > .calendar-body,
+body.is-phantom .calendar-card > .calendar-footer,
+body.is-phantom .calendar-card > .month-matches {
+  position: relative;
+  z-index: 2;
+}
+
+body.is-phantom .phantom-preview-photo {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.phantom-preview-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.025);
+}
+
+.phantom-preview-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 7, 9, 0.86) 0%, rgba(6, 7, 9, 0.28) 52%, rgba(6, 7, 9, 0.02) 82%),
+    linear-gradient(0deg, rgba(6, 7, 9, 0.78), transparent 56%);
+}
+
+.phantom-preview-kicker {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  color: rgba(230, 206, 157, 0.70);
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.phantom-preview-title {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: #f0e5cf;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.58);
+}
+
+body.is-phantom .preview-window,
+body.is-phantom .preview-orb {
+  opacity: 0;
+}
+
+body.is-phantom .phantom-calendar-crest {
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 2px solid rgba(213, 179, 111, 0.78);
+  border-radius: 50%;
+  background: #111216;
+  box-shadow: 0 0 0 2px rgba(159, 52, 57, 0.22), 0 8px 18px rgba(0, 0, 0, 0.34);
+}
+
+.phantom-calendar-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.is-phantom .date-title-row {
+  gap: 11px;
+}
+
+body.is-phantom .date-eyebrow .phantom-eyebrow {
+  display: inline-block;
+  color: #d0a85d;
+  font-weight: 700;
+}
+
+body.is-phantom .date-eyebrow .eyebrow-dot.phantom-eyebrow {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #a33a3d;
+}
+
+body.is-phantom .date-heading h1 {
+  color: #eee7dc;
+}
+
+body.is-phantom .year-title {
+  color: #b64b49;
+}
+
+body.is-phantom .weekday-row {
+  padding: 6px 2px 8px;
+  border-top: 1px solid rgba(198, 160, 92, 0.12);
+  border-bottom: 1px solid rgba(159, 52, 57, 0.24);
+  background: linear-gradient(90deg, rgba(159, 52, 57, 0.13), rgba(198, 160, 92, 0.035));
+}
+
+body.is-phantom .weekday-row span {
+  color: #c8aa70;
+}
+
+body.is-phantom .weekday-row span.weekend {
+  color: #d07167;
+}
+
+body.is-phantom .day-cell {
+  border-color: rgba(198, 160, 92, 0.11);
+  background: linear-gradient(155deg, #222329 0%, #0d0e11 100%);
+}
+
+body.is-phantom .day-cell:hover {
+  border-color: #9f3439;
+  background: linear-gradient(155deg, #3a3030 0%, #171215 100%);
+}
+
+body.is-phantom .day-cell.is-other-month {
+  background: #0b0c0f;
+}
+
+body.is-phantom .day-cell.is-today {
+  border-color: #e0bd79;
+  background: linear-gradient(150deg, #a83b3e, #6d262b);
+  color: #fff8e8;
+  box-shadow: 0 12px 24px rgba(159, 52, 57, 0.24);
+}
+
+body.is-phantom .day-cell.is-today .day-number,
+body.is-phantom .day-cell.is-today .day-lunar {
+  color: #fff8e8;
+}
+
+body.is-phantom .day-cell.is-selected:not(.is-today) {
+  border-color: #c6a05c;
+  background: rgba(198, 160, 92, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(198, 160, 92, 0.14);
+}
+
+body.is-phantom .calendar-footer {
+  border-top-color: rgba(159, 52, 57, 0.24);
+}
+
+body.is-phantom .selected-day-badge {
+  border-color: rgba(198, 160, 92, 0.22);
+  background: linear-gradient(145deg, rgba(159, 52, 57, 0.20), rgba(198, 160, 92, 0.10));
+}
+
+body.is-phantom .selected-relative {
+  background: rgba(159, 52, 57, 0.16);
+  color: #e2b2a6;
+}
+
+body.is-phantom .theme-tag,
+body.is-phantom .preset-card.is-active {
+  background: rgba(159, 52, 57, 0.16);
+  color: #e4c28b;
+}
+
+body.is-phantom .date-picker-popover {
+  border-color: rgba(159, 52, 57, 0.24);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(159, 52, 57, 0.15), transparent 35%),
+    var(--surface-strong);
+}
+
+body.is-phantom .date-picker-month.is-selected-month {
+  border-color: #c6a05c;
+  background: linear-gradient(145deg, #9f3439, #6c262b);
+}
+
+body.is-phantom .prompt-form button {
+  background: #9f3439;
+}
+
+body.is-phantom .month-matches,
+body.is-phantom .day-match,
+body.is-phantom .day-cell.has-match::before,
+body.is-phantom .mini-day.has-match::after,
+body.is-phantom .picker-match-count,
+body.is-phantom .calendar-footer.has-match .selected-match {
+  display: none;
+}
+
+body.is-phantom .day-cell.has-match {
+  border-color: rgba(198, 160, 92, 0.11);
+  background: linear-gradient(155deg, #222329 0%, #0d0e11 100%);
+  box-shadow: none;
+}
+
+body.is-phantom .day-cell.has-match .day-lunar {
+  display: block;
+  padding-right: 0;
+}
+
+body.is-phantom .calendar-footer.has-match .selected-countdown,
+body.is-phantom .calendar-footer.has-match .footer-aside {
+  display: flex;
+}
+
+body.is-phantom .preset-art[data-art-pattern="inkblade"]::before {
+  background-image:
+    repeating-linear-gradient(116deg, transparent 0 12px, rgba(255, 224, 158, 0.13) 12px 13px),
+    radial-gradient(ellipse at 74% 25%, rgba(255, 227, 171, 0.22), transparent 28%),
+    radial-gradient(ellipse at 20% 80%, rgba(159, 52, 57, 0.22), transparent 30%);
+}
+
+@media (max-width: 560px) {
+  body.is-phantom .date-eyebrow #lunarYearLabel,
+  body.is-phantom .date-eyebrow .phantom-eyebrow {
+    display: none;
+  }
+
+  body.is-phantom .phantom-calendar-crest {
+    width: 38px;
+    height: 38px;
+  }
+
+  body.is-phantom .calendar-card::after {
+    top: 102px;
+    right: -5px;
+    font-size: 62px;
+  }
+
+  .phantom-preview-title {
+    font-size: 17px;
+  }
+}
