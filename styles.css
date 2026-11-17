@@ -6150,3 +6150,347 @@ body.is-conan .preset-art[data-art-pattern="casefile"]::before {
     font-size: 17px;
   }
 }
+
+/* Black Myth: Wukong theme */
+.wukong-mark,
+.wukong-preview-photo,
+.wukong-calendar-crest,
+.wukong-eyebrow {
+  display: none;
+}
+
+body.is-wukong .brand-mark .calendar-mark,
+body.is-wukong .brand-mark .team-mark,
+body.is-wukong .brand-mark .demon-mark,
+body.is-wukong .brand-mark .conan-mark {
+  display: none;
+}
+
+body.is-wukong .brand-mark .wukong-mark {
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(214, 161, 77, 0.62);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(185, 138, 62, 0.18), 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+body.is-wukong .brand-mark {
+  border-color: rgba(214, 161, 77, 0.48);
+  background:
+    radial-gradient(circle at 28% 18%, rgba(230, 186, 103, 0.18), transparent 38%),
+    linear-gradient(145deg, #292215, #0d0c08);
+  color: #e8c77a;
+}
+
+body.is-wukong .brand-copy strong {
+  color: #e7dcc2;
+}
+
+body.is-wukong .brand-copy small {
+  color: #c6963f;
+  font-weight: 750;
+}
+
+body.is-wukong {
+  background-color: #0b0a07;
+  background-image:
+    linear-gradient(120deg, rgba(8, 8, 6, 0.90) 0%, rgba(18, 15, 10, 0.68) 48%, rgba(7, 7, 5, 0.92) 100%),
+    radial-gradient(circle at 80% 14%, rgba(185, 138, 62, 0.20), transparent 30%),
+    url("assets/wukong/wukong-bg.jpg");
+  background-position: center, center, center 45%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body[data-pattern="myth"] .ambient-pattern {
+  background-image:
+    radial-gradient(ellipse at 20% 38%, rgba(185, 138, 62, 0.17), transparent 30%),
+    radial-gradient(ellipse at 75% 64%, rgba(142, 57, 37, 0.15), transparent 28%),
+    repeating-linear-gradient(118deg, transparent 0 44px, rgba(214, 161, 77, 0.055) 44px 45px);
+  mask-image: linear-gradient(125deg, transparent 8%, #000 45%, transparent 94%);
+  opacity: 0.36;
+}
+
+body.is-wukong .theme-panel,
+body.is-wukong .team-panel {
+  border-color: rgba(185, 138, 62, 0.22);
+  background:
+    radial-gradient(circle at 8% 5%, rgba(148, 104, 42, 0.18), transparent 31%),
+    linear-gradient(155deg, rgba(29, 25, 17, 0.92), rgba(10, 10, 7, 0.88));
+  backdrop-filter: blur(28px) saturate(120%);
+}
+
+body.is-wukong .calendar-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(185, 138, 62, 0.30);
+  background:
+    radial-gradient(circle at 7% 0%, rgba(148, 104, 42, 0.14), transparent 30%),
+    linear-gradient(155deg, #1a1710 0%, #0d0c08 100%);
+  box-shadow: 0 28px 76px rgba(0, 0, 0, 0.50), inset 0 0 0 1px rgba(214, 161, 77, 0.07);
+}
+
+body.is-wukong .calendar-card::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d6a14d 0%, #b98a3e 42%, #6d4720 100%);
+  content: "";
+}
+
+body.is-wukong .calendar-card::after {
+  position: absolute;
+  z-index: 0;
+  top: 75px;
+  right: 22px;
+  color: rgba(214, 161, 77, 0.055);
+  content: "天命";
+  font-family: var(--font-display);
+  font-size: 78px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  pointer-events: none;
+}
+
+body.is-wukong .calendar-card > .calendar-toolbar,
+body.is-wukong .calendar-card > .calendar-body,
+body.is-wukong .calendar-card > .calendar-footer,
+body.is-wukong .calendar-card > .month-matches {
+  position: relative;
+  z-index: 2;
+}
+
+body.is-wukong .wukong-preview-photo {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.wukong-preview-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  transform: scale(1.025);
+}
+
+.wukong-preview-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 7, 4, 0.84) 0%, rgba(8, 7, 4, 0.24) 52%, rgba(8, 7, 4, 0.02) 82%),
+    linear-gradient(0deg, rgba(8, 7, 4, 0.78), transparent 56%);
+}
+
+.wukong-preview-kicker {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  color: rgba(232, 199, 122, 0.74);
+  font-size: 6.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.wukong-preview-title {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  color: #f3e5c3;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.56);
+}
+
+body.is-wukong .preview-window,
+body.is-wukong .preview-orb {
+  opacity: 0;
+}
+
+body.is-wukong .wukong-calendar-crest {
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 2px solid rgba(232, 199, 122, 0.80);
+  border-radius: 50%;
+  background: #141109;
+  box-shadow: 0 0 0 2px rgba(185, 138, 62, 0.20), 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.wukong-calendar-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.is-wukong .date-title-row {
+  gap: 11px;
+}
+
+body.is-wukong .date-eyebrow .wukong-eyebrow {
+  display: inline-block;
+  color: #d4a958;
+  font-weight: 700;
+}
+
+body.is-wukong .date-eyebrow .eyebrow-dot.wukong-eyebrow {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #a8452f;
+}
+
+body.is-wukong .date-heading h1 {
+  color: #f0e3c6;
+}
+
+body.is-wukong .year-title {
+  color: #c79640;
+}
+
+body.is-wukong .weekday-row {
+  padding: 6px 2px 8px;
+  border-top: 1px solid rgba(185, 138, 62, 0.13);
+  border-bottom: 1px solid rgba(185, 138, 62, 0.20);
+  background: linear-gradient(90deg, rgba(185, 138, 62, 0.11), rgba(142, 57, 37, 0.035));
+}
+
+body.is-wukong .weekday-row span {
+  color: #d6b573;
+}
+
+body.is-wukong .weekday-row span.weekend {
+  color: #d2725b;
+}
+
+body.is-wukong .day-cell {
+  border-color: rgba(185, 138, 62, 0.12);
+  background: linear-gradient(155deg, #201b12 0%, #0f0d09 100%);
+}
+
+body.is-wukong .day-cell:hover {
+  border-color: #b98a3e;
+  background: linear-gradient(155deg, #342a18 0%, #1a160e 100%);
+}
+
+body.is-wukong .day-cell.is-other-month {
+  background: #0d0c08;
+}
+
+body.is-wukong .day-cell.is-today {
+  border-color: #e0bc70;
+  background: linear-gradient(150deg, #d6a14d, #a9782f);
+  color: #171208;
+  box-shadow: 0 12px 24px rgba(185, 138, 62, 0.25);
+}
+
+body.is-wukong .day-cell.is-today .day-number,
+body.is-wukong .day-cell.is-today .day-lunar {
+  color: #171208;
+}
+
+body.is-wukong .day-cell.is-selected:not(.is-today) {
+  border-color: #b98a3e;
+  background: rgba(185, 138, 62, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(214, 161, 77, 0.16);
+}
+
+body.is-wukong .calendar-footer {
+  border-top-color: rgba(185, 138, 62, 0.22);
+}
+
+body.is-wukong .selected-day-badge {
+  border-color: rgba(185, 138, 62, 0.24);
+  background: linear-gradient(145deg, rgba(185, 138, 62, 0.20), rgba(142, 57, 37, 0.12));
+}
+
+body.is-wukong .selected-relative {
+  background: rgba(185, 138, 62, 0.16);
+  color: #e4c47c;
+}
+
+body.is-wukong .theme-tag,
+body.is-wukong .preset-card.is-active {
+  background: rgba(185, 138, 62, 0.16);
+  color: #e4c47c;
+}
+
+body.is-wukong .date-picker-popover {
+  border-color: rgba(185, 138, 62, 0.24);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(142, 57, 37, 0.14), transparent 35%),
+    var(--surface-strong);
+}
+
+body.is-wukong .date-picker-month.is-selected-month {
+  border-color: #d6a14d;
+  background: linear-gradient(145deg, #a9782f, #77541f);
+}
+
+body.is-wukong .prompt-form button {
+  background: #a9782f;
+}
+
+body.is-wukong .month-matches,
+body.is-wukong .day-match,
+body.is-wukong .day-cell.has-match::before,
+body.is-wukong .mini-day.has-match::after,
+body.is-wukong .picker-match-count,
+body.is-wukong .calendar-footer.has-match .selected-match {
+  display: none;
+}
+
+body.is-wukong .day-cell.has-match {
+  border-color: rgba(185, 138, 62, 0.12);
+  background: linear-gradient(155deg, #201b12 0%, #0f0d09 100%);
+  box-shadow: none;
+}
+
+body.is-wukong .day-cell.has-match .day-lunar {
+  display: block;
+  padding-right: 0;
+}
+
+body.is-wukong .calendar-footer.has-match .selected-countdown,
+body.is-wukong .calendar-footer.has-match .footer-aside {
+  display: flex;
+}
+
+body.is-wukong .preset-art[data-art-pattern="myth"]::before {
+  background-image:
+    radial-gradient(ellipse at 22% 35%, rgba(255, 224, 158, 0.25), transparent 32%),
+    repeating-linear-gradient(118deg, transparent 0 11px, rgba(255, 220, 154, 0.14) 11px 12px);
+}
+
+@media (max-width: 560px) {
+  body.is-wukong .date-eyebrow #lunarYearLabel,
+  body.is-wukong .date-eyebrow .wukong-eyebrow {
+    display: none;
+  }
+
+  body.is-wukong .wukong-calendar-crest {
+    width: 38px;
+    height: 38px;
+  }
+
+  body.is-wukong .calendar-card::after {
+    top: 104px;
+    right: -8px;
+    font-size: 58px;
+  }
+
+  .wukong-preview-title {
+    font-size: 17px;
+  }
+}
